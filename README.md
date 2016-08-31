@@ -40,8 +40,8 @@ Dom Brassey
 - Local: git co **(feature)**
 - Local: git merge **development** (merge dev into your feature branch)
 - Local: git push **origin** **(feature)** (merge your feature branch into dev remote)
-- GitHub: pull request (domlet **development** to HackerStacker **development**)
-- *ALERT THE TEAM* - everyone pause
+- GitHub: **pull** (feature) to team **development**
+- *ALERT THE TEAM* - everyone pause work
 - *ALERT THE TEAM* - Git Maestra merges feature into dev on remote
 - Local: git co **development**
 - Local: git pull **origin** **development**
@@ -49,5 +49,3 @@ Dom Brassey
 - Local: git merge **(feature)** **development**
 - Local: git co feature
 - (continue doing your work)
-
-
