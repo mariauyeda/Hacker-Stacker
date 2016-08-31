@@ -135,7 +135,7 @@ end
 
 desc 'Start IRB with application environment loaded'
 task "console" do
-  exec "irb -r./config/environment"
+  exec "pry -r./config/environment"
 end
 
 

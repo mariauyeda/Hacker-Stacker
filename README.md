@@ -20,6 +20,9 @@ Dom Brassey
 - As a user, I can comment on an answer to a question.
 - As a user, I can up vote a question.
 - As a user, I can up vote an answer.
+- As a user, I can down vote a question.
+- As a user, I can down vote an answer.
+
 
 ### Git workflow
 
