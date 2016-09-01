@@ -1,1 +1,0 @@
-comments_controller.rb
