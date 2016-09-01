@@ -1,17 +1,33 @@
 <div>
-	<h1>Welcome to Hacker Stacker</h1>
-	<h2>Select a question to explore, or login to post a question or comment</h2>
-	<ul>
-		<% @questions.each do |question| %>
-		<li>
-			<a href="/questions/<%= question.id %>"><%= question.title %></a><br>
-			<p>Question:<%= question.text %></p>
-			<p>Votes:<%= question.votes.count %></p>
-				<% question.answers.each do |answer| %>
-				<p>Answer:<%= answer.text %></p>
+	<div>
+		<h1>Welcome to Hacker Stacker</h1>
+	</div>
+
+	<div>
+		<h2>Select a question to explore, or login to post a question or comment</h2>
+		<div>
+			<ul>
+				<% @questions.each do |question| %>
+					<li>
+						<a href="/questions/<%= question.id %>"><%= question.title %></a><br>
+						<p>Question: <%= question.text %></p>
+						<p id="vote-value">Votes: <%= question.points %></p>
+						<% if current_user %>
+							<form action="/questions/<%= question.id %>/vote-up" method="POST">
+								<input type="submit" name="up-vote" id="up-vote" value="UP">
+							</form>
+							<form action="/questions/<%= question.id %>/vote-down" method="POST">
+								<input type="submit" name="down-vote" id="down-vote" value="DOWN">
+							</form>
+						<% end %>
+
+								<% question.answers.each do |answer| %>
+								<p>Answer:<%= answer.text %></p>
+							<% end %>
+					</li>
 				<% end %>
-		</li>
-		<% end %>
-	</ul>
+			</ul>
+		</div>
+	</div>
 
 </div>
