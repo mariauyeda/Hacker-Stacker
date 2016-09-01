@@ -1,1 +1,8 @@
-<h1>Form to create a new question</h1>
+<h1>Submit a Question:</h1>
+
+<error><%= @errors[0] if @errors %></error>
+<form action="/questions" method="post">
+  <input type="text" name="question[question_title]" placeholder="Question Title"><br/>
+  <textarea name="question[question_text]" placeholder="Question" size="30" rows="8"></textarea><br/>
+  <input type="submit" value="Submit">
+</form>

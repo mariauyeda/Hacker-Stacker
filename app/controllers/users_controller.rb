@@ -7,7 +7,7 @@ get '/users/:id' do
   @user = User.find(params[:id])
   p @user
   # if current_user
-  #   erb :'users/show'
+    erb :'users/show'
   # else
   #   redirect '/sessions/new'
   # end
