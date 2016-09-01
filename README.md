@@ -50,5 +50,4 @@ Dom Brassey
 - Local: git pull **origin** **development**
 - Local: git co **(feature)**
 - Local: git merge **(feature)** **development**
-- Local: git co feature
 - (continue doing your work)
