@@ -10,4 +10,9 @@ class Question < ActiveRecord::Base
   	user = User.find(self.user_id)
   	user.username
   end
+
+  def points
+    votes.sum(:value)
+  end
+  
 end
