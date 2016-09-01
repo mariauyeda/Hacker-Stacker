@@ -1,7 +1,7 @@
-# QUESTIONS INDEX - MARIA
+# Display a list of all questions
 get '/questions' do
-  @questions = Question.all
-  erb :'questions/index'
+	@questions = Question.all
+	erb :'/questions/index'
 end
 
 # QUESTIONS NEW
@@ -48,3 +48,4 @@ end
 #   @question.destroy
 #   redirect "/questions"
 # end
+
