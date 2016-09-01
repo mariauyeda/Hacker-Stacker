@@ -1,25 +1,24 @@
-<h1>Welcome to your profile page, <%= @user.first_name %> <%= @user.last_name %> </h1>
-<br>
-<h4>Your Questions:</h4>
+<h1>Profile page for <%= @user.first_name %> <%= @user.last_name %> </h1>
+
+<div><a href="/questions/new">Add a question</a></div>
+<div><a href="/users/<%= @user.id %>/comments">View all comments</a></div>
+<h4><%= @user.first_name %>'s' Questions:</h4>
   <ul>
   <% @user.questions.each do |question| %>
-  <li><%= question.title %><br>
+  <li><a href="/questions/<%= question.id %>"><%= question.title %></a><br>
       <%= question.text %>
   </li>
   <% end %>
   </ul>
 
-<h4>Your Contributed Answers:</h4>
+<h4><%= @user.first_name %>'s' Contributed Answers:</h4>
   <ul>
   <% @user.answers.each do |answer| %>
-  <li><%= answer.question.title %><br>
+  <li><a href="/questions/<%= answer.question.id %>#<%=@user.id %>"><%= answer.question.title %></a><br>
     <%= answer.text %></li>
   <% end %>
   </ul>
 
-<div><a href="/questions/new">Add a question</a></div>
-
-<div><a href="/users/<%= @user.id %>/comments">View all comments</a></div>
 
 
 

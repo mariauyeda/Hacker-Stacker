@@ -1,14 +1,12 @@
 <div class="user_login">
   <% if current_user %>
-
-    <a href="/users/<%= current_user.id %> ">Profile</a>
-
-    <a href="/">Home</a>
-
-    <form action="/sessions" method="POST">
+    <form action="/sessions" method="POST" id="logout-button">
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Logout">
-    </form>
+    </form>&nbsp;| 
+    <a href="/">Home</a> | 
+    <a href="/users/<%= current_user.id %> ">Profile</a>
+
 
   <% else %>
 
