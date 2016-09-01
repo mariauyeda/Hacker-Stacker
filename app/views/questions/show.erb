@@ -4,10 +4,12 @@
 <p><strong><%=@question.title %></strong></p>
 <p><%=@question.text %></p>
 <p><em>Asked by: <a href="/users/<%=@question_asker.id %>"><%=@question_asker.username %></a></em></p>
-
 <!-- ANSWER THIS QUESTION -->
+<% if current_user %>
 <p><a href="/questions/<%= @question.id %>/answers/new">Answer this question</a></p>
-
+<% else %>
+<a href="/questions">Log in</a> or <a href="/users/new">Register</a> to Answer this question
+<% end %>
 <!-- SHOW ALL ANSWERS -->
 <h2>Answers:</h2>
 <% if @answers_for_question.count != 0 %>

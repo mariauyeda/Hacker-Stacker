@@ -27,12 +27,12 @@ end
 
 # QUESTIONS SHOW
 get '/questions/:id' do
+  p "*" * 50
   # Get info to show the question
   p @question = Question.find(params[:id])
   # Get info to show the user
   @question_asker = User.find(@question.user_id)
   @answers_for_question = Answer.all.where(question_id: params[:id])
-  p "*" * 50
   erb :'questions/show'
 end
 
