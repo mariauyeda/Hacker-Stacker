@@ -6,12 +6,16 @@ end
 
 # QUESTIONS NEW
 get '/questions/new' do
-  @question = Question.new
+  p "*" * 50
+  p @user = current_user
+  p @question = Question.new
   erb :'questions/new'
 end
 
 # QUESTIONS CREATE
 post '/questions' do
+  p "*" * 50
+  p params
   @question = Question.new(params[:question])
   if @question.save
     redirect '/questions'
