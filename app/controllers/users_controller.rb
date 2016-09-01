@@ -3,6 +3,8 @@ get '/users/new' do
   erb :'users/new'
 end
 
+
+
 get '/users/:id' do
   @user = User.find(params[:id])
   p @user
@@ -11,6 +13,20 @@ get '/users/:id' do
   # else
   #   redirect '/sessions/new'
   # end
+end
+
+get '/users/:id/comments' do
+  @user = User.find(params[:id])
+  p "*"*22
+  p @user.id
+  @comments = Comment.all
+  @comments = @comments.select{ |comment| comment.user_id == @user.id }
+
+  @answers = Answer.all
+  @answers = @answers.select{ |answer| answer.user_id == @user.id }
+  
+  erb :'comments/index'
+ 
 end
 
 post '/users' do
