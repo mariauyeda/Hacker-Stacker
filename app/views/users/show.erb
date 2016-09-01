@@ -1,18 +1,19 @@
-<h1>Profile page for a specific user</h1>
-<h1><%= current_user.id %></h1>
-<h3>Welcome, <%= @user.first_name %> <%= @user.last_name %> </h3>
+<h1>Welcome to your profile page, <%= @user.first_name %> <%= @user.last_name %> </h1>
 <br>
 <h4>Your Questions:</h4>
   <ul>
   <% @user.questions.each do |question| %>
-  <li><%= question.title %></li>
+  <li><%= question.title %><br>
+      <%= question.text %>
+  </li>
   <% end %>
   </ul>
 
 <h4>Your Contributed Answers:</h4>
   <ul>
   <% @user.answers.each do |answer| %>
-  <li><%= answer.text %></li>
+  <li><%= answer.question.title %><br>
+    <%= answer.text %></li>
   <% end %>
   </ul>
 
