@@ -5,14 +5,17 @@
 <h2>Your Questions:</h2>
   <ul>
   <% @user.questions.each do |question| %>
-  <li><%= question %></li>
+  <li><%= question.title %><br>
+      <%= question.text %>
+  </li>
   <% end %>
   </ul>
 
 <h2>Your Contributed Answers:</h2>
   <ul>
   <% @user.answers.each do |answer| %>
-  <li><%= answer %></li>
+  <li><%= answer.question.title %><br>
+    <%= answer.text %></li>
   <% end %>
   </ul>
 
