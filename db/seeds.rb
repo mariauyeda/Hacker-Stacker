@@ -21,7 +21,7 @@ end
   Question.create(
     title:Faker::Lorem.sentence,
     text:Faker::Lorem.paragraph(2),
-    user_id:[1..20].sample
+    user_id:rand(1..20)
     # question_id:[1..20].sample
     )
 end
@@ -30,20 +30,20 @@ end
   Answer.create(
     text:Faker::Hacker.say_something_smart,
     user_id:[1..20].sample,
-    question_id:[1..20].sample
+    question_id:rand(1..20)
   )
 end
 
 20.times do
   Vote.create(
     value:[-1,0,1].sample,
-    user_id:[1..20].sample
+    user_id:rand(1..20)
   )
 end
 
 20.times do
   Comment.create(
     text:Faker::Hipster.sentence,
-    user_id:[1..20].sample
+    user_id:rand(1..20)
   )
 end
