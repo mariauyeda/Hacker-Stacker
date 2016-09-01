@@ -1,0 +1,35 @@
+<div class="user_login">
+  <% if current_user %>
+
+    <a href="/users/<%= current_user.id %> ">Profile</a>
+
+    <a href="/">Home</a>
+
+    <form action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Logout">
+    </form>
+
+  <% else %>
+
+    <% if @errors %>
+      <% @errors.each do |error_message| %>
+        <%= error_message %>
+      <% end %>
+    <% end %>
+
+    <form action="/sessions" method="POST">
+      <label>Email:</label>
+      <input type="email" name="email">
+
+      <label>Password:</label>
+      <input type="password" name="password">
+
+      <input type="submit" value="Login">
+    </form>
+
+    <a href="/users/new">Register</a>
+
+  <% end %>
+</div>
+
