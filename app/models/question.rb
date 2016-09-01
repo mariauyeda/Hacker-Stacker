@@ -4,4 +4,10 @@ class Question < ActiveRecord::Base
   has_many :answers
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
+
+
+  def author
+  	user = User.find(self.user_id)
+  	user.username
+  end
 end

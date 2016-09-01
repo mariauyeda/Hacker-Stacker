@@ -2,19 +2,19 @@
 <br>
 <h4>Your Questions:</h4>
   <ul>
-  <% @user.questions.each do |question| %>
+      <% @user.questions.each do |question| %>
   <li><%= question.title %><br>
       <%= question.text %>
   </li>
-  <% end %>
+      <% end %>
   </ul>
 
 <h4>Your Contributed Answers:</h4>
   <ul>
-  <% @user.answers.each do |answer| %>
-  <li><%= answer.question.title %><br>
-    <%= answer.text %></li>
-  <% end %>
+      <% @user.answers.each do |answer| %>
+  <li><%= answer.questions.title %><br>
+      <%= answer.text %></li>
+    <% end %>
   </ul>
 
 <div><a href="/questions/new">Add a question</a></div>

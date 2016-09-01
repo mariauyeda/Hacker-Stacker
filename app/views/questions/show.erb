@@ -1,20 +1,22 @@
 <!-- SHOW THE QUESTION -->
 <error><%= @errors[0] if @errors %></error>
 <h2>Question:</h2>
-<p><strong><%=@question.title %></strong></p>
-<p><%=@question.text %></p>
-<p><em>Asked by: <a href="/users/<%=@question_asker.id %>"><%=@question_asker.username %></a></em></p>
+	<p><strong><%=@question.title %></strong></p>
+	<p><%=@question.text %></p>
+	<p><em>Asked by: <a href="/users/<%=@question_asker.id %>"><%=@question_asker.username %></a></em></p>
 
 <!-- ANSWER THIS QUESTION -->
 <p><a href="/questions/<%= @question.id %>/answers/new">Answer this question</a></p>
 
 <!-- SHOW ALL ANSWERS -->
 <h2>Answers:</h2>
-<% if @answers_for_question.count != 0 %>
-<% @answers_for_question.each do |answer| %>
-<% answerer = User.find(answer.user_id) %>
-<p><%= answer.text %><em> ~ <a href="/users/<%=answerer.id %>"><%=answerer.username %></a></em></p>
-<% end %>
-<% else %>
-<error>No answers yet. Get crackin'.</error>
-<% end %>
+	<% if @answers_for_question.count != 0 %>
+		<% @answers_for_question.each do |answer| %>
+		
+		<p><%= answer.text %>
+		<p>Posted by: <em>~<a href="/users/<%=answer.user_id%>"><%="#{answer.answer_auth}" %> </a></em></p>
+	<% end %>
+	<% else %>
+		<error>No answers yet. Get crackin'.</error>
+	<% end %>
+
