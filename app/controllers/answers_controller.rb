@@ -1,18 +1,18 @@
 # ANSWERS INDEX
-# get '/answers' do
-#   @answers = Answer.all
-#   erb :'answers/index'
-# end
+get '/answers' do
+  @answers = Answer.all
+  erb :'answers/index'
+end
 
 # ANSWERS NEW
-get '/answers/new' do
+get '/questions/:id/answers/new' do
+  @question = Question.find(params[:id])
   @answer = Answer.new
-  @question = Question.find()
   erb :'answers/new'
 end
 
 # ANSWERS CREATE
-post '/answers' do
+post '/questions/:id/answers' do
   @answer = Answer.new(params[:answer])
   if @answer.save
     redirect '/answers'
