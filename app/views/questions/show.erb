@@ -8,6 +8,10 @@
 <p><a href="/questions/<%= @question.id %>/answers/new">Answer this question</a></p>
 <!-- SHOW ALL ANSWERS -->
 <h2>Answers:</h2>
+<% if @answers_for_question.count != 0 %>
 <% @answers_for_question.each do |answer| %>
     <p><%= answer.text %> - User #<%= answer.user_id %></p>
+<% end %>
+<% else %>
+<error>No answers yet. Get crackin'.</error>
 <% end %>
