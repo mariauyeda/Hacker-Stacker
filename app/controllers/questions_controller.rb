@@ -24,11 +24,8 @@ end
 # QUESTIONS SHOW
 get '/questions/:id' do
   @question = Question.find(params[:id])
-  @answers = Answer.all
-  @answers_for_question = @answers.find_by('answers.question_id' => '@question.id')
-  # select {|answer| answer.question_id == @question.id}
+  @answers_for_question = Answer.all.where(question_id: params[:id])
   p "*" * 50
-  p @answers[0]
   erb :'questions/show'
 end
 
