@@ -25,6 +25,7 @@ end
 get '/questions/:id' do
   p params
   @question = Question.find(params[:id])
+  # @answers = Answer.find_by()
   erb :'questions/show'
 end
 
