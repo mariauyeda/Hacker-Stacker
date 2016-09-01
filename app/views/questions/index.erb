@@ -5,8 +5,13 @@
 		<% @questions.each do |question| %>
 		<li>
 			<a href="/questions/<%= question.id %>"><%= question.title %></a><br>
-			<%= question.text %>
+			<p>Question:<%= question.text %></p>
+			<p>Votes:<%= question.votes.count %></p>
+				<% question.answers.each do |answer| %>
+				<p>Answer:<%= answer.text %></p>
+				<% end %>
 		</li>
 		<% end %>
 	</ul>
+
 </div>
