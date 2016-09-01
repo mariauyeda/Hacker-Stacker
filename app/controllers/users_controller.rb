@@ -1,5 +1,5 @@
 get '/users/new' do
-  @user = User.new  
+  # @user = User.new
   erb :'users/new'
 end
 
@@ -24,13 +24,13 @@ get '/users/:id/comments' do
 
   @answers = Answer.all
   @answers = @answers.select{ |answer| answer.user_id == @user.id }
-  
+
   erb :'comments/index'
- 
+
 end
 
 post '/users' do
-  if params[:password_confirmation] == params[:user][:password_hash]
+  if params[:password_confirmation] == params[:user][:password]
     @user = User.new(params[:user])
     if @user.save
       session[:id] = @user.id

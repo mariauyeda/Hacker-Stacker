@@ -4,9 +4,12 @@ get '/sessions/new' do
 end
 
 # Session CREATE
-post '/categories/sessions' do
+post '/sessions' do
   @user = User.find_by_email(params[:email])
-  if @user && @user.authenticate(params[:password])
+  "********************"
+  p @user
+  if @user.authenticate(params[:password])
+  p params
     session[:id] = @user.id
     redirect "/users/#{@user.id}"
   else
