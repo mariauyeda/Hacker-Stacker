@@ -43,7 +43,7 @@ end
 
 20.times do
   Comment.create(
-    text:Faker::Hacker.say_something_smart,
+    text:Faker::Hipster.say_something_smart,
     user_id:[1..20].sample
   )
 end
