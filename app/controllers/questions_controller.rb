@@ -27,6 +27,9 @@ end
 
 # QUESTIONS SHOW
 get '/questions/:id' do
+  # Get stuff to show the user
+   
+  # Get stuff to show the question
   @question = Question.find(params[:id])
   @answers_for_question = Answer.all.where(question_id: params[:id])
   p "*" * 50
