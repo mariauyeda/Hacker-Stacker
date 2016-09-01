@@ -1,5 +1,9 @@
 require 'faker'
 
+# ***************************
+#       DO THESE FIRST
+# ***************************
+
 # User.delete_all
 # Answer.delete_all
 # Question.delete_all
@@ -33,6 +37,10 @@ require 'faker'
 #     question_id:rand(1..20)
 #   )
 # end
+
+# ***************************
+#      DO THESE SECOND
+# ***************************
 
 20.times do
   Vote.create(

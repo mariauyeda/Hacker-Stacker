@@ -3,7 +3,11 @@
 <h2>Question:</h2>
 <p><strong><%=@question.title %></strong></p>
 <p><%=@question.text %></p>
-<!-- SHOW ANSWERS -->
-<p><%=@answers.text %></p>
+<p>Asked by: User #<%=@question.user_id %></p>
 <!-- ANSWER THIS QUESTION -->
 <p><a href="/questions/<%= @question.id %>/answers/new">Answer this question</a></p>
+<!-- SHOW ALL ANSWERS -->
+<h2>Answers:</h2>
+<% @answers_for_question.each do |answer| %>
+    <p><%= answer.text %> - User #<%= answer.user_id %></p>
+<% end %>

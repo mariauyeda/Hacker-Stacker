@@ -13,9 +13,11 @@ end
 
 # ANSWERS CREATE
 post '/questions/:id/answers' do
-  @answer = Answer.new(params[:answer])
+  p params
+  p @answer = Answer.new(params[:answer])
   if @answer.save
     redirect "/questions/#{params[:id]}"
+    p @answer
   else
     @errors = @answer.errors.full_messages
     erb :'answers/new'
