@@ -10,12 +10,14 @@
 				<% @questions.each do |question| %>
 					<li>
 						<a href="/questions/<%= question.id %>"><%= question.title %></a><br>
-						<p>Question:<%= question.text %></p>
-						<p>Votes:<%= question.votes.count %></p>
+						<p>Question: <%= question.text %></p>
+						<p>Votes: <%= question.points %></p>
 						<form action="/questions/<%= question.id %>/vote-up" method="POST">
 							<input type="submit" name="up-vote" value="UP">
 						</form>
-							<% question.answers.each do |answer| %>
+						<form action="/questions/<%= question.id %>/vote-down" method="POST">
+							<input type="submit" name="down-vote" value="DOWN">
+						</form>							<% question.answers.each do |answer| %>
 								<p>Answer:<%= answer.text %></p>
 							<% end %>
 					</li>
