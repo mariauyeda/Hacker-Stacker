@@ -11,13 +11,17 @@
 					<li>
 						<a href="/questions/<%= question.id %>"><%= question.title %></a><br>
 						<p>Question: <%= question.text %></p>
-						<p>Votes: <%= question.points %></p>
-						<form action="/questions/<%= question.id %>/vote-up" method="POST">
-							<input type="submit" name="up-vote" value="UP">
-						</form>
-						<form action="/questions/<%= question.id %>/vote-down" method="POST">
-							<input type="submit" name="down-vote" value="DOWN">
-						</form>							<% question.answers.each do |answer| %>
+						<p id="vote-value">Votes: <%= question.points %></p>
+						<% if current_user %>
+							<form action="/questions/<%= question.id %>/vote-up" method="POST">
+								<input type="submit" name="up-vote" id="up-vote" value="UP">
+							</form>
+							<form action="/questions/<%= question.id %>/vote-down" method="POST">
+								<input type="submit" name="down-vote" id="down-vote" value="DOWN">
+							</form>
+						<% end %>
+
+								<% question.answers.each do |answer| %>
 								<p>Answer:<%= answer.text %></p>
 							<% end %>
 					</li>
