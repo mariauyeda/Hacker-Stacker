@@ -26,7 +26,6 @@ require 'faker'
 #     title:Faker::Lorem.sentence,
 #     text:Faker::Lorem.paragraph(2),
 #     user_id:rand(1..20)
-#     # question_id:[1..20].sample
 #     )
 # end
 
