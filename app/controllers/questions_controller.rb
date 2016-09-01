@@ -23,6 +23,7 @@ end
 
 # QUESTIONS SHOW
 get '/questions/:id' do
+  p params
   @question = Question.find(params[:id])
   erb :'questions/show'
 end

@@ -15,7 +15,7 @@ end
 post '/questions/:id/answers' do
   @answer = Answer.new(params[:answer])
   if @answer.save
-    redirect '/answers'
+    redirect "/questions/#{params[:id]}"
   else
     @errors = @answer.errors.full_messages
     erb :'answers/new'
