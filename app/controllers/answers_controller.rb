@@ -6,6 +6,7 @@ end
 
 # ANSWERS NEW
 get '/questions/:id/answers/new' do
+  @user = current_user
   @question = Question.find(params[:id])
   @answer = Answer.new
   erb :'answers/new'
