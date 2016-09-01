@@ -14,7 +14,7 @@
 <% @answers_for_question.each do |answer| %>
 <% answerer = User.find(answer.user_id) %>
 <p><%= answer.text %><em> ~ <a href="/users/<%=answerer.id %>"><%=answerer.username %></a></em></p>
-<% end %>
+<hr><% end %>
 <% else %>
 <error>No answers yet. Get crackin'.</error>
 <% end %>
