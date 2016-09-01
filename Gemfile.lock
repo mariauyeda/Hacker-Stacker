@@ -17,12 +17,12 @@ GEM
     addressable (2.4.0)
     arel (6.0.3)
     awesome_print (1.7.0)
-<<<<<<< HEAD
-    backports (3.6.4)
-    bcrypt (3.1.11)
-=======
     backports (3.6.8)
+<<<<<<< HEAD
 >>>>>>> 4f60c8a1527d8dcf4e0a30f633cc019fdca6588f
+=======
+    bcrypt (3.1.11)
+>>>>>>> 5f383db8093d091ec3d6a3f2e065057981823de9
     builder (3.2.2)
     capybara (2.8.1)
       addressable
