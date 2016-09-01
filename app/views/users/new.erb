@@ -1,1 +1,13 @@
+<!-- /students/new -->
+
 <h1>Registration for a new user</h1>
+
+  <form action="/users" method="post">
+    <div><input type="text" placeholder="first name" name="user[first_name]"></div>
+    <div><input type="text" placeholder="last name" name="user[last_name]"></div>
+    <div><input type="text" placeholder="username" name="user[username]"></div>
+    <div><input type="text" placeholder="email" name="user[email]"></div>
+    <div><input type="password" placeholder="password" name="user[password_hash]"></div>
+    <div><input type="password" placeholder="password confirmation" name="password_confirmation"></div>
+    <input type="submit" value="submit"></div>
+  </form>
