@@ -1,1 +1,6 @@
 <h1>Show info for a specific question</h1>
+<error><%= @errors[0] if @errors %></error>
+<h2>
+<p><%=@question.title %></p>
+<p><%=@question.text %></p>
+</h2>
