@@ -1,1 +1,10 @@
-<h1>Form to create a new answer</h1>
+<h1>Submit an Answer:</h1>
+
+<error><%= @errors[0] if @errors %></error>
+<h2>
+<p><%=@question.title %></p>
+</h2>
+<form action="/questions/<%= @question.id %>/answers" method="post">
+  <textarea name="answer[text]" placeholder="Brilliant Answer" size="30" rows="8"></textarea><br/>
+  <input type="submit" value="Submit">
+</form>
