@@ -4,6 +4,11 @@
 <p><strong><%=@question.title %></strong></p>
 <p><%=@question.text %></p>
 <!-- SHOW ANSWERS -->
-<p><%=@answers.text %></p>
+<% @answers_for_question[0].each do |answer| %>
+    <li><%= answer.text %></li>
+    <li><%= answer.user_id %></li>
+<% end %>
+</li>
+
 <!-- ANSWER THIS QUESTION -->
 <p><a href="/questions/<%= @question.id %>/answers/new">Answer this question</a></p>
