@@ -7,18 +7,17 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
-  p @user
-  # if current_user
+  
+  if current_user
     erb :'users/show'
-  # else
-  #   redirect '/sessions/new'
-  # end
+  else
+    redirect '/sessions/new'
+  end
 end
 
 get '/users/:id/comments' do
   @user = User.find(params[:id])
-  p "*"*22
-  p @user.id
+  
   @comments = Comment.all
   @comments = @comments.select{ |comment| comment.user_id == @user.id }
 
