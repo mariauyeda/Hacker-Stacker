@@ -2,13 +2,12 @@
 <h1>User comments</h1>
 
 
-
-<h2>Your Comments:</h2>
   <ul>
   <% @comments.each do |comment| %>
   <li><%= comment.text %></li>
   <% end %>
   </ul>
+
 
 <h2>Your Answers:</h2>
   <ul>
@@ -17,5 +16,3 @@
   <% end %>
   </ul>
 </div>
-
-  

@@ -5,12 +5,15 @@
 <p><strong><%=@question.title %></strong></p>
 <p><%=@question.text %></p>
 <p><em>Asked by: <a href="/users/<%=@question_asker.id %>"><%=@question_asker.username %></a></em></p>
-
 <!-- ANSWER THIS QUESTION -->
+<% if current_user %>
 <p><a href="/questions/<%= @question.id %>/answers/new">Answer this question</a></p>
-
+<% else %>
+<a href="/questions">Log in</a> or <a href="/users/new">Register</a> to Answer this question
+<% end %>
 <!-- SHOW ALL ANSWERS -->
 <h2>Answers:</h2>
+<<<<<<< HEAD
 <% if @answers_for_question.count != 0 %>
 <% @answers_for_question.each do |answer| %>
 <% answerer = User.find(answer.user_id) %>
@@ -20,3 +23,14 @@
 <error>No answers yet. Get crackin'.</error>
 <% end %>
 </div>
+=======
+	<% if @answers_for_question.count != 0 %>
+		<% @answers_for_question.each do |answer| %>
+		
+		<p><%= answer.text %>
+		<p>Posted by: <em>~<a href="/users/<%=answer.user_id%>"><%="#{answer.answer_auth}" %> </a></em></p>
+	<% end %>
+	<% else %>
+		<error>No answers yet. Get crackin'.</error>
+	<% end %>
+>>>>>>> development
