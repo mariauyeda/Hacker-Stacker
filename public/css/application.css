@@ -4,8 +4,20 @@ error {
 
 #logout-button input[type="submit"] {
     display: inline; float: left;
-    background-color: white;
+    background-color: teal;
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+.user_login {
+  background-color: teal;
+  color: white;
+  margin: 0;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.user_login a {
+  color: white;
 }

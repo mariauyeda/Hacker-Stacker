@@ -3,8 +3,8 @@
     <form action="/sessions" method="POST" id="logout-button">
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Logout">
-    </form>&nbsp;| 
-    <a href="/">Home</a> | 
+    </form>&nbsp;&nbsp;|&nbsp;
+    <a href="/">Home</a>&nbsp;&nbsp;|&nbsp;
     <a href="/users/<%= current_user.id %> ">Profile</a>
 
 
@@ -17,16 +17,16 @@
     <% end %>
 
     <form action="/sessions" method="POST">
+    <a href="/users/new">Register</a>&nbsp;&nbsp;|&nbsp;
       <label>Email:</label>
       <input type="email" name="email">
 
-      <label>Password:</label>
+      &nbsp;<label>Password:</label>
       <input type="password" name="password">
 
       <input type="submit" value="Login">
     </form>
 
-    <a href="/users/new">Register</a>
 
   <% end %>
 </div>
