@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Submit a Question:</h1>
 <error><%= @errors[0] if @errors %></error>
 <form action="/questions" method="post">
@@ -6,3 +7,4 @@
     <textarea name="question[text]" placeholder="Question" size="30" rows="8"></textarea><br/>
     <input type="submit" value="Submit">
 </form>
+</div>
