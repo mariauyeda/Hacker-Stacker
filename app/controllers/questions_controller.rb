@@ -6,8 +6,8 @@ end
 
 # QUESTIONS NEW
 get '/questions/new' do
-  p @user = current_user
-  p @question = Question.new
+  @user = current_user
+  @question = Question.new
   erb :'questions/new'
 end
 
@@ -24,9 +24,7 @@ end
 
 # QUESTIONS SHOW
 get '/questions/:id' do
-  # Get info to show the question
   @question = Question.find(params[:id])
-  # Get info to show the user
   @question_asker = User.find(@question.user_id)
   @answers_for_question = Answer.all.where(question_id: params[:id])
   erb :'questions/show'

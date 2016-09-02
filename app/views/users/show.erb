@@ -20,6 +20,15 @@
   </ul>
 
 
+<h4><%= @user.first_name %>'s' Comments:</h4>
+  <ul>
+  <% @user.answers.each do |answer| %>
+  <li><a href="/questions/<%= answer.question.id %>"><%= answer.question.title %></a><br>
+    <%= answer.text %></li>
+  <% end %>
+  </ul>
+
+
 
 
 

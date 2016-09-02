@@ -17,8 +17,8 @@ end
 
 get '/users/:id/comments' do
   @user = User.find(params[:id])
-  
-  @comments = Comment.all
+  p "*" * 50
+  p @comments = Comment.all
   @comments = @comments.select{ |comment| comment.user_id == @user.id }
 
   @answers = Answer.all
